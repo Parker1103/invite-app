@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>邀請結果</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="capture" class="result-container">
+        <h1>邀請已送出！</h1>
+        <div id="inviteResult"></div>
+        <img src="picture GIF/Wonyoung.jpg" alt="Wonyoung" class="watermark">
+    </div>
+    <div class="button-group">
+        <button onclick="location.href='index.html'">返回首頁</button>
+    </div>
+
+    <script>
+        window.onload = function() {
+            const inviteData = JSON.parse(localStorage.getItem('inviteData'));
+            if (inviteData) {
+                const resultHTML = `
+                    <div class="result-item">
+                        <p>邀請人：${inviteData.inviterName}</p>
+                        <p>約出門幹嘛：${inviteData.eventName}</p>
+                        <p>時間：${inviteData.date}</p>
+                        <p>逼逼扯扯：\n${inviteData.inviteMessage || '無'}</p>
+                    </div>
+                `;
+                document.getElementById('inviteResult').innerHTML = resultHTML;
+            } else {
+                document.getElementById('inviteResult').innerHTML = '<p>找不到邀請資料</p>';
+            }
+        };
+    </script>
+</body>
+</html>

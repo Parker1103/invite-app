@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>回覆結果</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="capture" class="result-container">
+        <h1>回覆已送出！</h1>
+        <div id="responseResult"></div>
+        <img src="picture GIF/Wonyoung.jpg" alt="Wonyoung" class="watermark">
+    </div>
+    <div class="button-group">
+        <button onclick="location.href='index.html'">返回首頁</button>
+    </div>
+
+    <script>
+        window.onload = function() {
+            const responseData = JSON.parse(localStorage.getItem('responseData'));
+            if (responseData) {
+                const resultHTML = `
+                    <div class="result-item">
+                        <p>回覆者：${responseData.inviteeName}</p>
+                        <p>回應是蝦咪：</p>
+                        <ul>
+                            ${responseData.responses.map(response => `<li>${response}</li>`).join('')}
+                        </ul>
+                        <p>就 可以講點話安餒：\n${responseData.otherResponse || '無'}</p>
+                    </div>
+                `;
+                document.getElementById('responseResult').innerHTML = resultHTML;
+            } else {
+                document.getElementById('responseResult').innerHTML = '<p>找不到回覆資料</p>';
+            }
+        };
+    </script>
+</body>
+</html>

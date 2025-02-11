@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>邀請人</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>發送邀請</h1>
+    <form id="inviteForm">
+        <label>報上名來:</label>
+        <input type="text" id="inviterName" required><br><br>
+
+        <label>約出門幹嘛:</label>
+        <input type="text" id="eventName" required><br><br>
+
+        <label>時間:</label>
+        <input type="text" id="date" required><br><br>
+
+        <label>逼逼扯扯:</label><br>
+        <textarea id="inviteMessage"></textarea><br><br>
+
+        <button type="button" onclick="saveInvite()">提交邀請</button>
+    </form>
+
+    <script>
+        function saveInvite() {
+            const inviteData = {
+                inviterName: document.getElementById('inviterName').value,
+                eventName: document.getElementById('eventName').value,
+                date: document.getElementById('date').value,
+                inviteMessage: document.getElementById('inviteMessage').value
+            };
+
+            localStorage.setItem('inviteData', JSON.stringify(inviteData));
+            window.location.href = 'invite-result.html';
+        }
+    </script>
+</body>
+</html>

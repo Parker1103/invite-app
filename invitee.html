@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>被邀請人</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>回覆邀請</h1>
+    <form id="responseForm">
+        <label>報上名來：</label>
+        <input type="text" id="inviteeName" required><br><br>
+
+        <label>回應是蝦咪：</label><br>
+        <input type="checkbox" id="response1" value="好吧好吧可以啦"> 好吧好吧可以啦<br>
+        <input type="checkbox" id="response2" value="感覺是打妹我還在放假期"> 感覺是打妹我還在放假期<br>
+        <input type="checkbox" id="response3" value="我要上班餒"> 我要上班餒<br>
+        <input type="checkbox" id="response4" value="再看看啦再看看"> 再看看啦再看看<br>
+        <input type="checkbox" id="response5" value="不知道ㄟ沒什麼想法反正也不急再說再說"> 不知道ㄟ沒什麼想法反正也不急再說再說<br>
+        <input type="checkbox" id="response6" value="嗚拉拉嗚啦"> 嗚拉拉嗚啦<br>
+        <input type="checkbox" id="response7" value="super idol 的..."> super idol 的...<br>
+        <input type="checkbox" id="response8" value="I'm that I'm that girl   I'm that I'm that attitude   내가 정할게 나의 무드"> I'm that I'm that girl   I'm that I'm that attitude   내가 정할게 나의 무드<br><br>
+
+        <label>就 可以講點話安餒:</label><br>
+        <textarea id="otherResponse"></textarea><br><br>
+
+        <button type="button" onclick="saveResponse()">提交回覆</button>
+    </form>
+
+    <script>
+        function saveResponse() {
+            const responses = [];
+            for (let i = 1; i <= 8; i++) {
+                const checkbox = document.getElementById('response' + i);
+                if (checkbox.checked) {
+                    responses.push(checkbox.value);
+                }
+            }
+
+            const responseData = {
+                inviteeName: document.getElementById('inviteeName').value,
+                responses: responses,
+                otherResponse: document.getElementById('otherResponse').value
+            };
+
+            localStorage.setItem('responseData', JSON.stringify(responseData));
+            window.location.href = 'response-result.html';
+        }
+    </script>
+</body>
+</html>
