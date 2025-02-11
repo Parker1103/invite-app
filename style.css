@@ -15,17 +15,32 @@ body {
     font-family: 'Noto Sans TC', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft JhengHei', '微軟正黑體', sans-serif;
     text-align: center;
     background-image: 
-        radial-gradient(circle at 100% 100%, #ffffff 0, #ffffff 3px, transparent 3px),
-        radial-gradient(circle at 0 100%, #ffffff 0, #ffffff 3px, transparent 3px),
-        radial-gradient(circle at 100% 0, #ffffff 0, #ffffff 3px, transparent 3px),
-        radial-gradient(circle at 0 0, #ffffff 0, #ffffff 3px, transparent 3px);
-    background-size: 20px 20px;
+        url('./picture GIF/Cyndaquil.gif'),
+        url('./picture GIF/Mew.gif'),
+        url('./picture GIF/Victini.gif'),
+        url('./picture GIF/gengar.gif'),
+        url('./picture GIF/Greninja.gif'),
+        url('./picture GIF/Snorlax.gif'),
+        url('./background1.jpg');
     background-position: 
-        -10px -10px,
-        190px -10px,
-        190px 190px,
-        -10px 190px;
+        30% 5%,          /* Cyndaquil */
+        73% 5%,         /* Mew */
+        27% 95%,         /* Victini */
+        73% 50%,        /* Gengar */
+        73% 95%,         /* Greninja */
+        27% 50%,        /* Snorlax */
+        center;         /* 背景圖片 */
+    background-size: 
+        150px,
+        150px,
+        150px,
+        150px,
+        150px,
+        150px,
+        cover;
     background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: black;
 }
 
 h1 {
