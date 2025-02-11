@@ -15,13 +15,13 @@ body {
     font-family: 'Noto Sans TC', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft JhengHei', '微軟正黑體', sans-serif;
     text-align: center;
     background-image: 
-        url('./picture GIF/Cyndaquil.gif'),
-        url('./picture GIF/Mew.gif'),
-        url('./picture GIF/Victini.gif'),
-        url('./picture GIF/gengar.gif'),
-        url('./picture GIF/Greninja.gif'),
-        url('./picture GIF/Snorlax.gif'),
-        url('./background1.jpg');
+        url('/invite-app/picture GIF/Cyndaquil.gif'),
+        url('/invite-app/picture GIF/Mew.gif'),
+        url('/invite-app/picture GIF/Victini.gif'),
+        url('/invite-app/picture GIF/gengar.gif'),
+        url('/invite-app/picture GIF/Greninja.gif'),
+        url('/invite-app/picture GIF/Snorlax.gif'),
+        url('/invite-app/background1.jpg');
     background-position: 
         30% 5%,          /* Cyndaquil */
         73% 5%,         /* Mew */
